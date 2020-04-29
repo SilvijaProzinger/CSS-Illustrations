@@ -1,0 +1,61 @@
+$colors: (
+	bg: #FEEE9D,
+	crown: #fbc171,
+	jewels: #c91010
+);
+
+$small-screen: 560px;
+$medium-screen: 710px;
+$large-screen: 1500px;
+
+@function color($color-name){
+	@return map-get($colors, $color-name);
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin:0;
+}
+
+body {
+  background: color(bg);
+}
+
+.crown {
+	position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+}
+
+.body {
+	width: 300px;
+	height: 150px;
+	background-color: color(crown);
+	position: relative;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+}
+
+.points {
+	position: relative;
+	top: 4px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    z-index: 5;
+}
+
+.point {
+	display: inline-block;
+	border-color: color(crown) transparent;
+	border-style: solid;
+	border-width: 0px 35px 35px 35px;
+	height: 0px;
+	width: 0px;
+}
+
